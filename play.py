@@ -17,15 +17,27 @@ bclick = True
 flag = 0
 
 def disableButton():
-    button1.configure(state=DISABLED)
-    button2.configure(state=DISABLED)
-    button3.configure(state=DISABLED)
-    button4.configure(state=DISABLED)
-    button5.configure(state=DISABLED)
-    button6.configure(state=DISABLED)
-    button7.configure(state=DISABLED)
-    button8.configure(state=DISABLED)
-    button9.configure(state=DISABLED)
+    global flag,bclick
+    flag = 0
+    bclick = True
+    button1.configure( text=" ")
+    button2.configure( text=" ")
+    button3.configure( text=" ")
+    button4.configure( text=" ")
+    button5.configure( text=" ")
+    button6.configure( text=" ")
+    button7.configure( text=" ")
+    button8.configure( text=" ")
+    button9.configure( text=" ")
+    # button1.configure(state=DISABLED)
+    # button2.configure(state=DISABLED)
+    # button3.configure(state=DISABLED)
+    # button4.configure(state=DISABLED)
+    # button5.configure(state=DISABLED)
+    # button6.configure(state=DISABLED)
+    # button7.configure(state=DISABLED)
+    # button8.configure(state=DISABLED)
+    # button9.configure(state=DISABLED)
 
 
 
@@ -60,9 +72,11 @@ def checkForWin():
         button7['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
         disableButton()
         tkinter.messagebox.showinfo("Tic-Tac-Toe", pa)
+        tkinter.messagebox.showinfo("Tic-Tac-Toe", "Restarting Game !!!")
 
     elif(flag == 8):
         tkinter.messagebox.showinfo("Tic-Tac-Toe", "It is a Tie")
+        tkinter.messagebox.showinfo("Tic-Tac-Toe", "Restarting Game !!!")
 
     elif (button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == 'O' or
           button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == 'O' or
@@ -75,6 +89,7 @@ def checkForWin():
           button7['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O'):
         disableButton()
         tkinter.messagebox.showinfo("Tic-Tac-Toe", playerb)
+        tkinter.messagebox.showinfo("Tic-Tac-Toe", "Restarting Game !!!")
 
 
 buttons = StringVar()
